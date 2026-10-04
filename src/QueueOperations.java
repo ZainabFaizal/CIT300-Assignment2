@@ -86,6 +86,6 @@ public class QueueOperations {
         sb.append(" ]");
         System.out.println(sb);
     }
-
+/** Returns the current number of elements in the queue. */
     public int size() { return count; }
 }
