@@ -1,5 +1,6 @@
 /**
  * QueueOperations.java
+ * Author: Zainab Faizal - 23DA2-0874
  * MEMBER 2 RESPONSIBILITY (Part B): Queue implementation.
  *
  * A custom circular array-based queue (FIFO) supporting enqueue, dequeue,
