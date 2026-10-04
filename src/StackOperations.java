@@ -2,7 +2,8 @@ import java.util.EmptyStackException;
 
 /**
  * StackOperations.java
- * MEMBER 2 RESPONSIBILITY (Part A): Stack implementation.
+ * Author: Zainab Faizal - 23DA2-0874
+ * Member 2 Responsibility: Stack and Queue implementation.
  *
  * A custom array-based stack (LIFO) supporting push, pop, peek, and
  * display. Handles the empty-stack condition gracefully instead of
@@ -46,7 +47,7 @@ public class StackOperations {
     /** Pop (remove and return) the top value. Handles empty stack gracefully. */
     public Integer pop() {
         if (isEmpty()) {
-            System.out.println("ERROR: Cannot pop - the stack is empty.");
+            System.out.println("ERROR: Cannot pop - the stack is empty. Push a value first.");
             return null;
         }
         int value = stackArray[top--];
@@ -57,7 +58,7 @@ public class StackOperations {
     /** Peek at the top value without removing it. Handles empty stack gracefully. */
     public Integer peek() {
         if (isEmpty()) {
-            System.out.println("ERROR: Cannot peek - the stack is empty.");
+            System.out.println("ERROR: Cannot peek - the stack is empty. Push a value first.");
             return null;
         }
         System.out.println("Top of stack: " + stackArray[top]);
