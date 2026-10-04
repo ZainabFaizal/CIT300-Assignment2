@@ -79,6 +79,6 @@ public class StackOperations {
         sb.append(" ]");
         System.out.println(sb);
     }
-
+/** Returns the current number of elements in the stack. */
     public int size() { return top + 1; }
 }
