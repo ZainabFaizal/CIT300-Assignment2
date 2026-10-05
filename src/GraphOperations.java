@@ -2,12 +2,8 @@ import java.util.*;
 
 /**
  * GraphOperations.java
- * MEMBER 4 RESPONSIBILITY: Graph implementation and traversal.
- *
- * An undirected, unweighted graph using an adjacency list. Supports
- * adding vertices, adding edges, displaying the graph, and both BFS and
- * DFS traversal. Each traversal also counts the number of steps taken,
- * so it can feed directly into the Performance Comparison module.
+ * Author: Jawhitu Fathim Rifna - 23DA2-0842
+ * Member 4 Responsibility: Graph implementation and traversal (BFS/DFS).
  */
 public class GraphOperations {
 
@@ -15,6 +11,10 @@ public class GraphOperations {
 
     /** Add a vertex to the graph. */
     public boolean addVertex(String vertex) {
+        if (vertex == null || vertex.trim().isEmpty()) {
+            System.out.println("ERROR: Vertex name cannot be empty.");
+            return false;
+        }
         if (adjList.containsKey(vertex)) {
             System.out.println("ERROR: Vertex '" + vertex + "' already exists.");
             return false;
@@ -26,8 +26,16 @@ public class GraphOperations {
 
     /** Add an undirected edge between two vertices. */
     public boolean addEdge(String vertexA, String vertexB) {
+        if (vertexA == null || vertexB == null || vertexA.trim().isEmpty() || vertexB.trim().isEmpty()) {
+            System.out.println("ERROR: Vertex names cannot be empty.");
+            return false;
+        }
         if (!adjList.containsKey(vertexA) || !adjList.containsKey(vertexB)) {
             System.out.println("ERROR: Both vertices must exist before adding an edge.");
+            return false;
+        }
+        if (vertexA.equals(vertexB)) {
+            System.out.println("ERROR: A vertex cannot connect to itself.");
             return false;
         }
         adjList.get(vertexA).add(vertexB);
@@ -113,6 +121,6 @@ public class GraphOperations {
     }
 
     public Set<String> getAllVertices() {
-        return adjList.keySet();
+        return new LinkedHashSet<>(adjList.keySet());
     }
 }
