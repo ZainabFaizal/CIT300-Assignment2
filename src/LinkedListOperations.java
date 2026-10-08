@@ -37,6 +37,11 @@ public class LinkedListOperations {
 
     /** Delete the first occurrence of a value. */
     public boolean delete(int value) {
+        if (isEmpty()) {
+            System.out.println("ERROR: Cannot delete from an empty linked list.");
+            return false;
+        }
+
         Node prev = null, temp = head;
         while (temp != null) {
             if (temp.data == value) {
@@ -55,6 +60,11 @@ public class LinkedListOperations {
 
     /** Search for a value. Returns its position (0-indexed), or -1 if not found. */
     public int search(int value) {
+        if (isEmpty()) {
+            System.out.println("Linked list is empty. Cannot search for " + value + ".");
+            return -1;
+        }
+
         Node temp = head;
         int position = 0;
         int steps = 0;
@@ -73,7 +83,7 @@ public class LinkedListOperations {
 
     /** Display all elements in order. */
     public void display() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Linked list is empty.");
             return;
         }
