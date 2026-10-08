@@ -57,15 +57,17 @@ public class LinkedListOperations {
     public int search(int value) {
         Node temp = head;
         int position = 0;
+        int steps = 0;
         while (temp != null) {
+            steps++;
             if (temp.data == value) {
-                System.out.println("Value " + value + " found at position " + position + ".");
+                System.out.println("Value " + value + " found at position " + position + " (" + steps + " step(s)).");
                 return position;
             }
             temp = temp.next;
             position++;
         }
-        System.out.println("Value " + value + " not found in linked list.");
+        System.out.println("Value " + value + " not found in linked list (" + steps + " step(s)).");
         return -1;
     }
 
