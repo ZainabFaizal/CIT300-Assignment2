@@ -19,6 +19,7 @@ public class LinkedListOperations {
     private int size;
 
     public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
 
     /** Insert a value at the end of the list. */
     public void insert(int value) {
