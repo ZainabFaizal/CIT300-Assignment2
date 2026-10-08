@@ -145,7 +145,7 @@ public class Main {
                 case 3 -> linkedListOps.search(readInt("Enter value to search: "));
                 case 4 -> linkedListOps.display();
                 case 5 -> back = true;
-                default -> System.out.println("Invalid choice.");
+                default -> System.out.println("Invalid choice. Please select a number between 1 and 5.");
             }
         }
     }

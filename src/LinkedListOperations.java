@@ -9,6 +9,7 @@
 public class LinkedListOperations {
 
     private static class Node {
+        // Each node stores one integer and a reference to the next node.
         int data;
         Node next;
         Node(int data) { this.data = data; }
@@ -18,6 +19,7 @@ public class LinkedListOperations {
     private int size;
 
     public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
 
     /** Insert a value at the end of the list. */
     public void insert(int value) {
@@ -35,6 +37,11 @@ public class LinkedListOperations {
 
     /** Delete the first occurrence of a value. */
     public boolean delete(int value) {
+        if (isEmpty()) {
+            System.out.println("ERROR: Cannot delete from an empty linked list.");
+            return false;
+        }
+
         Node prev = null, temp = head;
         while (temp != null) {
             if (temp.data == value) {
@@ -53,23 +60,30 @@ public class LinkedListOperations {
 
     /** Search for a value. Returns its position (0-indexed), or -1 if not found. */
     public int search(int value) {
+        if (isEmpty()) {
+            System.out.println("Linked list is empty. Cannot search for " + value + ".");
+            return -1;
+        }
+
         Node temp = head;
         int position = 0;
+        int steps = 0;
         while (temp != null) {
+            steps++;
             if (temp.data == value) {
-                System.out.println("Value " + value + " found at position " + position + ".");
+                System.out.println("Value " + value + " found at position " + position + " (" + steps + " step(s)).");
                 return position;
             }
             temp = temp.next;
             position++;
         }
-        System.out.println("Value " + value + " not found in linked list.");
+        System.out.println("Value " + value + " not found in linked list (" + steps + " step(s)).");
         return -1;
     }
 
     /** Display all elements in order. */
     public void display() {
-        if (head == null) {
+        if (isEmpty()) {
             System.out.println("Linked list is empty.");
             return;
         }
