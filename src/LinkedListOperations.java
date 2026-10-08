@@ -9,6 +9,7 @@
 public class LinkedListOperations {
 
     private static class Node {
+        // Each node stores one integer and a reference to the next node.
         int data;
         Node next;
         Node(int data) { this.data = data; }
