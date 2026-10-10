@@ -1,5 +1,6 @@
 /**
  * ArrayOperations.java
+ * Author: Ramla Rishad - 23DA2-0925
  * MEMBER 1 RESPONSIBILITY: Array implementation.
  *
  * A dynamically resizing integer array supporting insert, delete, search,
