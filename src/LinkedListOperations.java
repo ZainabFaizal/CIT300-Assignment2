@@ -1,4 +1,5 @@
 /**
+ * Author: MMF.Shazna - 23DA2-0639
  * LinkedListOperations.java
  * MEMBER 3 RESPONSIBILITY: Linked List implementation.
  *
@@ -8,6 +9,7 @@
 public class LinkedListOperations {
 
     private static class Node {
+        // Each node stores one integer and a reference to the next node.
         int data;
         Node next;
         Node(int data) { this.data = data; }
@@ -17,6 +19,7 @@ public class LinkedListOperations {
     private int size;
 
     public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
 
     /** Insert a value at the end of the list. */
     public void insert(int value) {
