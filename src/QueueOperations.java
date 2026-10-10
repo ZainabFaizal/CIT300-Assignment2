@@ -52,7 +52,7 @@ public class QueueOperations {
     /** Remove and return the value at the front of the queue. Handles empty queue gracefully. */
     public Integer dequeue() {
         if (isEmpty()) {
-            System.out.println("ERROR: Cannot dequeue - the queue is empty.");
+            System.out.println("ERROR: Cannot dequeue - the queue is empty. Enqueue a value first.");
             return null;
         }
         int value = queueArray[front];
@@ -65,7 +65,7 @@ public class QueueOperations {
     /** View the front value without removing it. Handles empty queue gracefully. */
     public Integer peekFront() {
         if (isEmpty()) {
-            System.out.println("ERROR: Cannot peek - the queue is empty.");
+            System.out.println("ERROR: Cannot peek - the queue is empty. Enqueue a value first.");
             return null;
         }
         System.out.println("Front of queue: " + queueArray[front]);
