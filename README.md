@@ -3,10 +3,8 @@
 Graded Practical Assignment 2 (Week 12) — Data Structures and Algorithms
 
 ## Project Description
-A Java console application demonstrating the practical use of arrays, stacks, queues,
-linked lists, searching algorithms (linear and binary), and graphs (with BFS/DFS
-traversal), along with a performance comparison module that reports step counts and
-execution time for different algorithmic approaches.
+
+A Java console application demonstrating the practical use of arrays, stacks, queues, linked lists, searching algorithms (linear and binary), and graphs (with BFS/DFS traversal), along with a performance comparison module that reports step counts and execution time for different algorithmic approaches.
 
 ## Group Members
 
@@ -19,18 +17,19 @@ execution time for different algorithmic approaches.
 | All members | — | Performance comparison, main menu, integration and testing | Jointly built PerformanceComparison.java and Main.java, tested all menu paths, wrote README |
 
 ## Technologies Used
+
 - Java (console-based application)
 - No external libraries — all data structures implemented manually
 
 ## Main System Features
+
 - Array: insert, delete, search, display
 - Stack: push, pop, peek, display (handles empty stack)
 - Queue: enqueue, dequeue, peek/front, display (handles empty queue)
 - Linked List: insert, delete, search, display
 - Searching: Linear Search and Binary Search, with step-count comparison
 - Graph: add vertex, add edge, display, BFS traversal, DFS traversal
-- Performance Comparison: compares Linear vs Binary Search and BFS vs DFS, reporting
-  step counts and execution time, with an explanation of the complexity difference
+- Performance Comparison: compares Linear vs Binary Search and BFS vs DFS, reporting step counts and execution time, with an explanation of the complexity difference
 
 ## How to Compile & Run
 
