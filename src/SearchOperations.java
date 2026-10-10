@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * SearchOperations.java
+ * Author: Ramla Rishad - 23DA2-0925
  * MEMBER 1 RESPONSIBILITY: Searching implementation (Linear and Binary search).
  *
  * Operates on the data currently stored in ArrayOperations. Both search
