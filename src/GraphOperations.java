@@ -12,35 +12,28 @@ public class GraphOperations {
     /** Add a vertex to the graph. */
     public boolean addVertex(String vertex) {
         if (vertex == null || vertex.trim().isEmpty()) {
-            System.out.println("ERROR: Vertex name cannot be empty.");
             return false;
         }
         if (adjList.containsKey(vertex)) {
-            System.out.println("ERROR: Vertex '" + vertex + "' already exists.");
             return false;
         }
         adjList.put(vertex, new LinkedHashSet<>());
-        System.out.println("Vertex '" + vertex + "' added.");
         return true;
     }
 
     /** Add an undirected edge between two vertices. */
     public boolean addEdge(String vertexA, String vertexB) {
         if (vertexA == null || vertexB == null || vertexA.trim().isEmpty() || vertexB.trim().isEmpty()) {
-            System.out.println("ERROR: Vertex names cannot be empty.");
             return false;
         }
         if (!adjList.containsKey(vertexA) || !adjList.containsKey(vertexB)) {
-            System.out.println("ERROR: Both vertices must exist before adding an edge.");
             return false;
         }
         if (vertexA.equals(vertexB)) {
-            System.out.println("ERROR: A vertex cannot connect to itself.");
             return false;
         }
         adjList.get(vertexA).add(vertexB);
         adjList.get(vertexB).add(vertexA);
-        System.out.println("Edge added between '" + vertexA + "' and '" + vertexB + "'.");
         return true;
     }
 
@@ -70,7 +63,6 @@ public class GraphOperations {
     public TraversalResult bfs(String start) {
         List<String> order = new ArrayList<>();
         if (!adjList.containsKey(start)) {
-            System.out.println("ERROR: Starting vertex '" + start + "' does not exist.");
             return new TraversalResult(order, 0);
         }
         Set<String> visited = new HashSet<>();
@@ -96,7 +88,6 @@ public class GraphOperations {
     public TraversalResult dfs(String start) {
         List<String> order = new ArrayList<>();
         if (!adjList.containsKey(start)) {
-            System.out.println("ERROR: Starting vertex '" + start + "' does not exist.");
             return new TraversalResult(order, 0);
         }
         Set<String> visited = new HashSet<>();

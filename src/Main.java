@@ -195,22 +195,43 @@ public class Main {
             System.out.println("6. Return to Main Menu");
             int choice = readInt("Enter your choice: ");
             switch (choice) {
-                case 1 -> graphOps.addVertex(readNonEmpty("Enter vertex name: "));
+                case 1 -> {
+                    String vertex = readNonEmpty("Enter vertex name: ");
+                    if (graphOps.addVertex(vertex)) {
+                        System.out.println("Vertex '" + vertex + "' added.");
+                    } else {
+                        System.out.println("ERROR: Vertex '" + vertex + "' already exists.");
+                    }
+                }
                 case 2 -> {
                     String a = readNonEmpty("Enter first vertex: ");
                     String b = readNonEmpty("Enter second vertex: ");
-                    graphOps.addEdge(a, b);
+                    if (!graphOps.hasVertex(a) || !graphOps.hasVertex(b)) {
+                        System.out.println("ERROR: Both vertices must exist before adding an edge.");
+                    } else if (a.equals(b)) {
+                        System.out.println("ERROR: A vertex cannot connect to itself.");
+                    } else if (graphOps.addEdge(a, b)) {
+                        System.out.println("Edge added between '" + a + "' and '" + b + "'.");
+                    }
                 }
                 case 3 -> graphOps.display();
                 case 4 -> {
                     String start = readNonEmpty("Enter starting vertex: ");
-                    GraphOperations.TraversalResult r = graphOps.bfs(start);
-                    if (!r.order.isEmpty()) System.out.println("BFS order: " + r.order + " (" + r.steps + " step(s))");
+                    if (!graphOps.hasVertex(start)) {
+                        System.out.println("ERROR: Starting vertex '" + start + "' does not exist.");
+                    } else {
+                        GraphOperations.TraversalResult r = graphOps.bfs(start);
+                        System.out.println("BFS order: " + r.order + " (" + r.steps + " step(s))");
+                    }
                 }
                 case 5 -> {
                     String start = readNonEmpty("Enter starting vertex: ");
-                    GraphOperations.TraversalResult r = graphOps.dfs(start);
-                    if (!r.order.isEmpty()) System.out.println("DFS order: " + r.order + " (" + r.steps + " step(s))");
+                    if (!graphOps.hasVertex(start)) {
+                        System.out.println("ERROR: Starting vertex '" + start + "' does not exist.");
+                    } else {
+                        GraphOperations.TraversalResult r = graphOps.dfs(start);
+                        System.out.println("DFS order: " + r.order + " (" + r.steps + " step(s))");
+                    }
                 }
                 case 6 -> back = true;
                 default -> System.out.println("Invalid choice.");
